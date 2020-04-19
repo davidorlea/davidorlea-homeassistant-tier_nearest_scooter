@@ -1,0 +1,8 @@
+{
+  "domain": "tier_nearest_scooter",
+  "name": "Tier Nearest Scooter Sensor",
+  "documentation": "",
+  "dependencies": [],
+  "codeowners": ["@davidorlea"],
+  "requirements": []
+}
