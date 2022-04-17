@@ -120,7 +120,7 @@ class TierNearestScooterSensor(Entity):
         return self._state
 
     @property
-    def device_state_attributes(self):
+    def extra_state_attributes(self):
         """Return the state attributes of the Tier Nearest Scooter Sensor."""
         return self._attributes
 
