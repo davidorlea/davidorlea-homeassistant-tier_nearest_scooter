@@ -6,7 +6,7 @@ import logging
 import requests
 import voluptuous as vol
 
-from homeassistant.components.sensor import PLATFORM_SCHEMA
+from homeassistant.components.sensor import PLATFORM_SCHEMA, SensorDeviceClass
 from homeassistant.const import (
     ATTR_ATTRIBUTION,
     ATTR_BATTERY_LEVEL,
@@ -17,7 +17,7 @@ from homeassistant.const import (
     CONF_LONGITUDE,
     CONF_NAME,
     CONF_RADIUS,
-    LENGTH_METERS,
+    UnitOfLength,
 )
 import homeassistant.helpers.config_validation as cv
 from homeassistant.helpers.entity import Entity
@@ -105,9 +105,14 @@ class TierNearestScooterSensor(Entity):
         return self._name
 
     @property
+    def device_class(self):
+        """Return the device class the Tier Nearest Scooter Sensor."""
+        return SensorDeviceClass.DISTANCE
+
+    @property
     def unit_of_measurement(self):
         """Return the unit of measurement of the Tier Nearest Scooter Sensor."""
-        return LENGTH_METERS
+        return UnitOfLength.METERS
 
     @property
     def icon(self):
