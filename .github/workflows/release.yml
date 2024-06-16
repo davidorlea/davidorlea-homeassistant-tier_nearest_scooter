@@ -1,0 +1,29 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - custom_components/tier_nearest_scooter/manifest.json
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+      - name: Draft new release
+        uses: davidorlea/actions/homeassistant/draft-release@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          component-name: tier_nearest_scooter
