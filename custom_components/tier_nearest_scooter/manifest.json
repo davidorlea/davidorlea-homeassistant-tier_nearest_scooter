@@ -1,10 +1,12 @@
 {
   "domain": "tier_nearest_scooter",
   "name": "Tier Nearest Scooter Sensor",
-  "version": "0.3.0",
-  "documentation": "https://github.com/davidorlea/homeassistant-tier_nearest_scooter",
-  "issue_tracker": "https://github.com/davidorlea/homeassistant-tier_nearest_scooter/issues",
-  "dependencies": [],
   "codeowners": ["@davidorlea"],
-  "requirements": []
+  "dependencies": [],
+  "documentation": "https://github.com/davidorlea/homeassistant-tier_nearest_scooter",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/davidorlea/homeassistant-tier_nearest_scooter/issues",
+  "requirements": [],
+  "version": "0.3.0"
 }
